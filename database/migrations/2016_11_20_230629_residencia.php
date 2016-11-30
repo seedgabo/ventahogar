@@ -16,16 +16,16 @@ class Residencia extends Migration
         Schema::create('residencias', function (Blueprint $table) {
             $table->increments('id');
             $table->string('nombre');
-            $table->integer('ciudad_id');
-            $table->integer('barrio_id');
+            $table->integer('ciudad_id')->nullable();
+            $table->integer('barrio_id')->nullable();
             $table->string('tipo')->default('casa');
-            $table->text('direccion');
-            $table->string('latitud');
-            $table->string('longitud');
+            $table->text('direccion')->nullable();
+            $table->string('latitud')->nullable();
+            $table->string('longitud')->nullable();
             $table->text('descripcion')->nullable();
             $table->string('slogan')->nullable();
             $table->string('disponibilidad')->default("disponible");
-            $table->integer("precio");
+            $table->integer("precio")->default(0);
             $table->string("tipo_venta")->default("venta"); // Arriendo,Venta
             $table->string('url_video')->nullable();
             $table->integer('default_photo')->nullable();

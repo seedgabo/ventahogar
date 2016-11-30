@@ -16,6 +16,7 @@ Route::get('/contact', 'HomeController@contact');
 Route::post('/login', 'HomeController@login');
 Route::get('/logout', 'HomeController@logout');
 Route::get('/ver/{id}', 'HomeController@ver');
+Route::post('/interes', 'HomeController@interes');
 Route::get('/busqueda', 'HomeController@busqueda');
 
 Route::group(['prefix' => 'admin' , 'middleware' => ['Admin']], function() {

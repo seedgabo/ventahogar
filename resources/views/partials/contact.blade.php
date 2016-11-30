@@ -5,16 +5,16 @@
 
 		<div class="agileits_mail_grids">
 			<div class="col-md-8 agileits_mail_grid_left">
-				<form action="{{url('login')}}" method="post">
+				<form action="{{url('register')}}" method="post">
 					{{ csrf_field() }}
 					<h4>Nombre*</h4>
-					<input type="text" name="Name" placeholder="nombre" required="">
+					<input type="text" name="name" placeholder="nombre" required="">
 					<h4>Email*</h4>
-					<input type="email" name="Email" placeholder="email"  required="">
+					<input type="email" name="email" placeholder="email"  required="">
 					<h4>Telefono*</h4>
-					<input type="text" name="Phone" placeholder="telefono" required="">
+					<input type="text" name="phone" placeholder="telefono" required="">
 					<h4>Mensaje*</h4>
-					<textarea name="Message" placeholder="mensaje"></textarea>
+					<textarea name="message" placeholder="mensaje"></textarea>
 					<button type="submit" class="btn btn-primary btn-lg">Enviar</button>
 				</form>
 			</div>
