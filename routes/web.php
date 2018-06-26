@@ -9,7 +9,7 @@
 | by your application. Just tell Laravel the URIs it should respond
 | to using a Closure or controller method. Build something great!
 |
-*/
+ */
 
 Route::get('/', 'HomeController@welcome');
 Route::get('/contact', 'HomeController@contact');
@@ -19,19 +19,18 @@ Route::get('/ver/{id}', 'HomeController@ver');
 Route::post('/interes', 'HomeController@interes');
 Route::get('/busqueda', 'HomeController@busqueda');
 
-Route::group(['prefix' => 'admin' , 'middleware' => ['Admin']], function() {
-	CRUD::resource('residencia', 'Admin\ResidenciaCrudController');
-	CRUD::resource('contacto', 'Admin\ContactoCrudController');
-	CRUD::resource('ciudad', 'Admin\CiudadCrudController');
-	CRUD::resource('barrio', 'Admin\BarrioCrudController');
+Route::group(['prefix' => 'admin', 'middleware' => ['Admin']], function () {
+    // CRUD::resource('residencia', 'Admin\ResidenciaCrudController');
+    // CRUD::resource('contacto', 'Admin\ContactoCrudController');
+    // CRUD::resource('ciudad', 'Admin\CiudadCrudController');
+    // CRUD::resource('barrio', 'Admin\BarrioCrudController');
 
-	Route::get('residencia/{id}/fotos', 'AdminController@editarFotos');
-	Route::get('residencia/{residencia_id}/image/{image_id}/default','AdminController@defaultPhoto');
-	Route::post('residencia/{id}/uploadPhoto','AdminController@uploadPhoto' );
+    Route::get('residencia/{id}/fotos', 'AdminController@editarFotos');
+    Route::get('residencia/{residencia_id}/image/{image_id}/default', 'AdminController@defaultPhoto');
+    Route::post('residencia/{id}/uploadPhoto', 'AdminController@uploadPhoto');
 });
 
-
-Route::group(['prefix' => 'api'], function() {
-	Route::get('image/{id}', 'ApiController@GetImage');
-	Route::get('image/{id}/delete', 'ApiController@deleteImage');
+Route::group(['prefix' => 'api'], function () {
+    Route::get('image/{id}', 'ApiController@GetImage');
+    Route::get('image/{id}/delete', 'ApiController@deleteImage');
 });
